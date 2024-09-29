@@ -72,5 +72,10 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Idle", false);
             anim.SetBool("Marche", false);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            anim.SetTrigger("Recharger");
+        }
     }
 }
