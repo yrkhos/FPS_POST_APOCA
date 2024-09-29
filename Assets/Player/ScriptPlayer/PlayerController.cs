@@ -73,6 +73,12 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Marche", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log("Vous avez tirer !");
+            anim.SetTrigger("Tirer");
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             anim.SetTrigger("Recharger");
