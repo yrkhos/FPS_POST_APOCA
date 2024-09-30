@@ -78,6 +78,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1))
         {
             anim.SetBool("Viser", true);
+            if (Input.GetKey(input.InputFront))
+            {
+                transform.Translate(-viser * Time.deltaTime, 0, 0);
+                anim.SetBool("MarcheVise", true);
+            }
+            else
+            {
+                anim.SetBool("MarcheVise", false);
+            }
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Debug.Log("Vous avez tirer !");
