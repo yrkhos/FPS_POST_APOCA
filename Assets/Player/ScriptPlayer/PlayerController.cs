@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerInput input;
 
+    public float viser;
+
     public float devant;
     public float courir;
     public float arriere;
@@ -73,10 +75,18 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Marche", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            Debug.Log("Vous avez tirer !");
-            anim.SetTrigger("Tirer");
+            anim.SetBool("Viser", true);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Debug.Log("Vous avez tirer !");
+                anim.SetTrigger("Tirer");
+            }
+        }
+        else
+        {
+            anim.SetBool("Viser", false);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
